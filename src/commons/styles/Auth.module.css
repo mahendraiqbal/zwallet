@@ -1,0 +1,44 @@
+.title-login{
+    color: #FFFFFF;
+    font-size: 1.8rem;
+    padding: 5%;
+    padding-left: 10%;
+    text-align: start;
+}
+
+.phone2{
+    /* position: relative; */
+    /* padding-left: 90px; */
+    transform: rotate(10deg);
+    top: 20px;
+    left: 100px;
+}
+
+.phone{
+    padding: 5%;
+    padding-left: 10%;
+    transform: rotate(-10deg);
+}
+
+.image-phone{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.word-login{
+    color: #FFFFFF;
+    font-size: 1.5rem;
+    padding: 5%;
+    padding-left: 10%;
+    font-weight: 500;
+    text-align: start;
+}
+
+.fill-word{
+    color: #FFFFFF;
+    font-size: 1rem;
+    padding: 2%;
+    padding-left: 10%;
+    font-weight: 300;
+    text-align: start;
+}

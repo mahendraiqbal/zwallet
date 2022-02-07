@@ -1,0 +1,126 @@
+.icon {
+  padding: 4% 4%;
+  display: grid;
+  font-size: 2.1rem;
+  position: relative;
+  color: white;
+  z-index: 1;
+  grid-template-columns: 70% 15% 15%;
+}
+
+.jumbotron {
+  z-index: 0;
+  position: relative;
+  background-image: url('../../../public/Mask-Group-landing.png');
+  /* background-color: aqua; */
+  min-height: max(60vh, 600px);
+}
+
+.login{
+  font-size: 1.2rem;
+  width: 70%;
+  height: 50px;
+  border-radius: 10px;
+  border: 1px solid #FFFFFF;
+  background-color: #6379F4;
+  color: #FFFFFF;
+}
+
+.register{
+  font-size: 1.2rem;
+  width: 70%;
+  height: 50px;
+  border-radius: 10px;
+  border: 1px solid #6379F4;
+  background-color: #FFFFFF;
+  color: #6379F4;
+}
+
+.title-jumbotron{
+  z-index: 1;
+}
+
+.article-landing{
+  z-index: 1;
+  background-color: white;
+}
+
+.image-landing{
+  z-index: 1;
+  background-color: violet;
+}
+
+.title-jumbotron{
+  text-align: center;
+  font-size: 3.5rem;
+  font-weight: 600;
+  color: #FFFFFF;
+}
+
+.fill-jumbotron{
+  text-align: center;
+  color: #FFFFFF;
+  padding-top: 2%;
+}
+
+.button-jumbotron{
+  text-align: center;
+  width: 15%;
+  height: 50px;
+  border: 1px solid #6379F4;
+  border-radius: 10px;
+  color: #6379F4;
+  font-size: 1rem;
+}
+
+.jumbotron-button{
+  text-align: center;
+}
+
+.title-choose{
+  padding-top: 10%;
+  text-align: center;
+  font-size: 3.5rem;
+  font-weight: 500;
+}
+
+.fill-choose{
+  text-align: center;
+}
+
+.title-cardChoose{
+  text-align: center;
+  font-weight: 800;
+}
+
+.fill-cardChoose{
+  text-align: center;
+  font-weight: 100;
+}
+
+.choose-section{
+  margin: 10% 0%;
+}
+
+.icon-reserved{
+  min-height: max(30vh, 100px);
+  background-color: black;
+  margin: 0;
+}
+
+.transfer-price{
+  margin-top: 5%;
+  text-align: center;
+  /* border: 1px solid rgba(71, 58, 209, 0.06); */
+  color: #6379F4;
+  font-size: 4rem;
+  font-weight: 500;
+  border-radius: 100px;
+  border: 1px solid gray;
+  width: 50%;
+  margin-left: 25%;
+}
+
+.price-transfer{
+  text-align: center;
+}
