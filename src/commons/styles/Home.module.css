@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300&display=swap");
+
 .icon {
   padding: 4% 4%;
   display: grid;
@@ -11,108 +13,108 @@
 .jumbotron {
   z-index: 0;
   position: relative;
-  background-image: url('../../../public/Mask-Group-landing.png');
+  background-image: url("../../../public/Mask-Group-landing.png");
   /* background-color: aqua; */
   min-height: max(60vh, 600px);
 }
 
-.login{
+.login {
   font-size: 1.2rem;
   width: 70%;
   height: 50px;
   border-radius: 10px;
-  border: 1px solid #FFFFFF;
-  background-color: #6379F4;
-  color: #FFFFFF;
+  border: 1px solid #ffffff;
+  background-color: #6379f4;
+  color: #ffffff;
 }
 
-.register{
+.register {
   font-size: 1.2rem;
   width: 70%;
   height: 50px;
   border-radius: 10px;
-  border: 1px solid #6379F4;
-  background-color: #FFFFFF;
-  color: #6379F4;
+  border: 1px solid #6379f4;
+  background-color: #ffffff;
+  color: #6379f4;
 }
 
-.title-jumbotron{
+.title-jumbotron {
   z-index: 1;
 }
 
-.article-landing{
+.article-landing {
   z-index: 1;
   background-color: white;
 }
 
-.image-landing{
+.image-landing {
   z-index: 1;
   background-color: violet;
 }
 
-.title-jumbotron{
+.title-jumbotron {
   text-align: center;
   font-size: 3.5rem;
   font-weight: 600;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
-.fill-jumbotron{
+.fill-jumbotron {
   text-align: center;
-  color: #FFFFFF;
+  color: #ffffff;
   padding-top: 2%;
 }
 
-.button-jumbotron{
+.button-jumbotron {
   text-align: center;
   width: 15%;
   height: 50px;
-  border: 1px solid #6379F4;
+  border: 1px solid #6379f4;
   border-radius: 10px;
-  color: #6379F4;
+  color: #6379f4;
   font-size: 1rem;
 }
 
-.jumbotron-button{
+.jumbotron-button {
   text-align: center;
 }
 
-.title-choose{
+.title-choose {
   padding-top: 10%;
   text-align: center;
   font-size: 3.5rem;
   font-weight: 500;
 }
 
-.fill-choose{
+.fill-choose {
   text-align: center;
 }
 
-.title-cardChoose{
+.title-cardChoose {
   text-align: center;
   font-weight: 800;
 }
 
-.fill-cardChoose{
+.fill-cardChoose {
   text-align: center;
   font-weight: 100;
 }
 
-.choose-section{
+.choose-section {
   margin: 10% 0%;
 }
 
-.icon-reserved{
-  min-height: max(30vh, 100px);
-  background-color: black;
+.icon-reserved {
+  min-height: max(20vh, 100px);
+  /* background-color: ; */
   margin: 0;
 }
 
-.transfer-price{
+.transfer-price {
   margin-top: 5%;
   text-align: center;
   /* border: 1px solid rgba(71, 58, 209, 0.06); */
-  color: #6379F4;
+  color: #6379f4;
   font-size: 4rem;
   font-weight: 500;
   border-radius: 100px;
@@ -121,6 +123,77 @@
   margin-left: 25%;
 }
 
-.price-transfer{
+.price-transfer {
   text-align: center;
+}
+
+.money-transfered {
+  font-family: "Nunito Sans";
+  font-size: 60px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 93px;
+  letter-spacing: 0em;
+  text-align: center;
+}
+
+.word-money {
+  font-family: 'Nunito Sans';
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 31px;
+  letter-spacing: 0em;
+  text-align: center;
+}
+
+.description h1 {
+    font-family: Nunito Sans;
+    font-size: 3rem;
+    font-style: normal;
+    font-weight: 700;
+    text-align: left;
+}
+
+.description {
+    width: 100%;
+    height: max(25vh, 300px);
+    padding-top: 4.5rem;
+    margin-bottom: 50px;
+    border-bottom: 1px solid white;
+}
+
+.info {
+    bottom: 0;
+    margin-top: 3rem;
+    height: 5vh;
+}
+
+.description p {
+    font-family: Nunito Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1.2rem;
+    color: rgba(239, 239, 239, 0.75);
+}
+
+.info p {
+    font-family: Nunito Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1.2rem;
+    color: rgba(239, 239, 239, 0.75);
+}
+
+.right {
+    text-align: right;
+}
+
+.footer-landing{
+  background-color: #6379f4;
+}
+
+.icon-footer{
+  font-size: 1.3rem;
+  color: #FFFFFF;
 }

@@ -1,19 +1,61 @@
-import styles from "src/commons/styles/Main.module.css"
+import styles from "src/commons/styles/Main.module.css";
+import Link from "next/link";
+import { useRouter } from "next/router";
 
-function LayoutMain() {
+export default function LayoutMain() {
+    const router = useRouter();
+    const style = {
+      marginRight: 10,
+      // color: router.asPath === href ? 'red' : 'black',
+    }
+  
+    const handleClick = (e) => {
+      e.preventDefault()
+      router.push(href)
+    }
   return (
-      <>
-        <div className={`${styles["main-layout"]} col-md-12 `}>
-            <ul>
-              <li className={styles.list}>Dashboard</li>
-              <li className={styles.list}>Transfer</li>
-              <li className={styles.list}>Top up</li>
-              <li className={styles.list}>Profile</li>
-              <li className={styles.listLogout}>Logout</li>
-            </ul>
+    <aside className={styles.menu}>
+      <div>
+        <Link href="/mains/home" onClick={handleClick} style={style} passHref>
+          <a pathname={router.pathname}>
+            {" "}
+            <i className="bi bi-grid"></i>
+            Dashboard
+          </a>
+        </Link>
+      </div>
+
+      <div>
+        <Link href="/mains/transfer" onClick={handleClick} style={style} passHref>
+          <a pathname={router.pathname}>
+            {" "}
+            <i className="bi bi-arrow-up"></i>
+            Transfer
+          </a>
+        </Link>
+      </div>
+
+      <div>
+        <Link href="/mains/topup" onClick={handleClick} style={style} passHref>
+          <a pathname={router.pathname}>
+            <i className="bi bi-plus-lg"></i>
+            Top up
+          </a>
+        </Link>
         </div>
-      </>
+        <div>
+          <Link href="/mains/profile" onClick={handleClick} style={style} passHref>
+            <a pathname={router.pathname}>
+              <i className="bi bi-person"></i>
+              Profil
+            </a>
+          </Link>
+        </div>
+
+        <button className={styles.logout}>
+          <i className= "bi bi-upload"></i>
+          Logout
+        </button>
+    </aside>
   );
 }
-
-export default LayoutMain;

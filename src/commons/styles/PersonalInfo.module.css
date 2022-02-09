@@ -1,0 +1,122 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300&display=swap");
+
+.main-personalInfo {
+  margin: 0;
+}
+
+.fill-personalInfo {
+  /* background-color: greenyellow; */
+  border-radius: 10px;
+  box-shadow: 0px 6px 20px rgba(196, 196, 196, 0.67);
+  margin: 7% 0;
+  padding: 5% 0;
+  text-align: center;
+}
+
+.title {
+  text-align: start;
+}
+
+.first-name{
+    text-align: start;
+}
+
+.label-fname {
+  text-align: start;
+  font-family: "Nunito Sans";
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 22px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
+.input-fname {
+  font-family: "Nunito Sans";
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 30px;
+  letter-spacing: 0em;
+  text-align: left;
+  border: 0;
+}
+
+.last-name{
+    text-align: start;
+}
+
+.label-lname {
+  text-align: start;
+  font-family: "Nunito Sans";
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 22px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
+.input-lname {
+  font-family: "Nunito Sans";
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 30px;
+  letter-spacing: 0em;
+  text-align: left;
+  border: 0;
+}
+
+.verif-email{
+    text-align: start;
+}
+
+.label-email {
+  text-align: start;
+  font-family: "Nunito Sans";
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 22px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
+.input-email {
+  font-family: "Nunito Sans";
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 30px;
+  letter-spacing: 0em;
+  text-align: left;
+  border: 0;
+}
+
+.phone-number{
+    text-align: start;
+}
+
+.label-phone {
+  text-align: start;
+  font-family: "Nunito Sans";
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 22px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
+.input-phone {
+  font-family: "Nunito Sans";
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 30px;
+  letter-spacing: 0em;
+  text-align: left;
+  border: 0;
+}

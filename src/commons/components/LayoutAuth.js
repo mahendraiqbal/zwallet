@@ -7,18 +7,11 @@ function LayoutAuth() {
         <p className={styles["title-login"]}>Zwallet</p>
           <div className={`${styles["image-phone"]} col col-md-12`}>
             <Image
-              src={"/phone.png"}
+              src={"/phoneFix.png"}
               alt="image phone"
-              width={250}
+              width={450}
               height={500}
               className={styles.phone}
-            />
-            <Image
-              src={"/phone2.png"}
-              alt="image phone"
-              width={250}
-              height={500}
-              className={styles.phone2}
             />
           </div>
           <p className={styles["word-login"]}>App that Covering Banking Needs.</p>

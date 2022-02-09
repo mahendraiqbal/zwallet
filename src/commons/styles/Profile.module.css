@@ -1,0 +1,139 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300&display=swap");
+
+.main-profile {
+  margin: 0;
+}
+
+.fill-profile {
+  /* background-color: greenyellow; */
+  border-radius: 10px;
+  box-shadow: 0px 6px 20px rgba(196, 196, 196, 0.67);
+  margin: 7% 0;
+  padding: 5% 0;
+  text-align: center;
+}
+
+.personal-info {
+  font-family: "Nunito Sans";
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 28px;
+  letter-spacing: 0em;
+  text-align: left;
+  height: 50px;
+  width: 400px;
+  /* left: 648px;
+  top: 481px; */
+  border-radius: 10px;
+  text-align: center;
+  background-color: #e5e8ed;
+  border: 0;
+  color: #4d4b57;
+}
+
+.button-personal {
+  margin: 1% 0;
+}
+
+.change-password {
+  font-family: "Nunito Sans";
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 28px;
+  letter-spacing: 0em;
+  text-align: left;
+  height: 50px;
+  width: 400px;
+  /* left: 648px;
+  top: 481px; */
+  border-radius: 10px;
+  text-align: center;
+  background-color: #e5e8ed;
+  border: 0;
+  color: #4d4b57;
+}
+
+.button-changePass {
+  margin: 1% 0;
+}
+
+.change-pin {
+  font-family: "Nunito Sans";
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 28px;
+  letter-spacing: 0em;
+  text-align: left;
+  height: 50px;
+  width: 400px;
+  /* left: 648px;
+  top: 481px; */
+  border-radius: 10px;
+  text-align: center;
+  background-color: #e5e8ed;
+  border: 0;
+  color: #4d4b57;
+}
+
+.button-changePin {
+  margin: 1% 0;
+}
+
+.logout {
+  font-family: "Nunito Sans";
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 28px;
+  letter-spacing: 0em;
+  text-align: left;
+  height: 50px;
+  width: 400px;
+  /* left: 648px;
+  top: 481px; */
+  border-radius: 10px;
+  text-align: center;
+  background-color: #e5e8ed;
+  border: 0;
+  color: #4d4b57;
+}
+
+.button-logout {
+  margin: 1% 0;
+}
+
+.name-profile {
+  font-family: "Nunito Sans";
+  font-size: 1.4rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 32px;
+  letter-spacing: 0em;
+  text-align: center;
+}
+
+.number-profile {
+  font-family: Nunito Sans;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 27px;
+  letter-spacing: 0em;
+  text-align: center;
+}
+
+.button-edit {
+  font-family: 'Nunito Sans';
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 27px;
+  letter-spacing: 0em;
+  text-align: center;
+  width: 10%;
+  border: 0;
+  background-color: #FFFFFF;
+}

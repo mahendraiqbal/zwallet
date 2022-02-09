@@ -1,0 +1,152 @@
+.titleLogin {
+  margin: 0 5%;
+  font-size: 1.6rem;
+  font-weight: 500;
+  padding-top: 25%;
+}
+
+.loginFill {
+  margin: 0 5%;
+  font-size: 0.8rem;
+  padding: 5% 0;
+  font-size: 0.9rem;
+  color: grey;
+}
+
+.email {
+  margin: 5% 5%;
+  width: 80%;
+  border-top: 0;
+  border-right: 0;
+  border-left: 0;
+}
+
+.password {
+  margin: 10% 5%;
+  width: 80%;
+  border-top: 0;
+  border-right: 0;
+  border-left: 0;
+}
+
+.forgot {
+  text-align: end;
+  margin-right: 10%;
+}
+
+.button-login {
+  margin-top: 20%;
+  background-color: grey;
+  width: 80%;
+  margin-left: 5%;
+}
+
+.account-login {
+  margin: 10% 5%;
+}
+
+.aside-auth {
+  background-image: url("../../../public/Mask-Group-auth.png");
+  text-align: center;
+}
+
+.main-login {
+  margin: 0;
+}
+
+.title-login {
+  color: #ffffff;
+  font-size: 1.8rem;
+  padding: 5%;
+  padding-left: 10%;
+}
+
+.phone2 {
+  position: relative;
+  transform: rotate(10deg);
+  top: 20px;
+  left: 100px;
+}
+
+.phone {
+  padding: 5%;
+  padding-left: 10%;
+  transform: rotate(-10deg);
+}
+
+.word-login {
+  color: #ffffff;
+  font-size: 1.5rem;
+  padding: 5%;
+  padding-left: 10%;
+  font-weight: 500;
+}
+
+.fill-word {
+  color: #ffffff;
+  font-size: 1rem;
+  padding: 2%;
+  padding-left: 10%;
+  font-weight: 300;
+}
+
+.input-pin {
+  position: relative;
+  height: 45px;
+  width: 33px;
+  background: #ffffff;
+
+  border: 1px solid rgba(169, 169, 169, 0.6);
+  box-sizing: border-box;
+  box-shadow: 0px 10px 75px rgba(147, 147, 147, 0.1);
+  border-radius: 10px;
+
+  text-align: center;
+
+  top: 23px;
+  right: 13px;
+}
+
+.btn-auth {
+  top: 43px;
+}
+
+.form-data {
+  display: grid;
+  grid-template-rows: 30% 30% 60%;
+  /* grid-template-columns: auto auto auto auto auto auto; */
+}
+
+.word-pin {
+  font-family: "Nunito Sans";
+  font-size: 1.2rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 33px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
+.fill-pin {
+  font-family: "Nunito Sans";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 30px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
+.form-inputPin {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto auto;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.button-pin {
+  margin-top: 20%;
+  background-color: grey;
+  width: 80%;
+  margin-left: 5%;
+}

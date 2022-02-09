@@ -1,0 +1,33 @@
+.footer {
+  height: 50px;
+  background-color: #6379f4;
+}
+
+.brand-year {
+  font-family: "Nunito Sans";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 28px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #ffffff;
+  margin-top: auto;
+  margin-bottom: auto;
+  padding-left: 5%;
+}
+
+.phone-footer {
+  font-family: 'Nunito Sans';
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 28px;
+  letter-spacing: 0em;
+  text-align: left;
+  margin-top: auto;
+  margin-bottom: auto;
+  color: #FFFFFF;
+  text-align: end;
+  padding-right: 8%;
+}

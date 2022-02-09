@@ -1,0 +1,25 @@
+.successTitles {
+    font-weight: normal;
+    font-size: 1.8vh;
+    color: #7A7886;
+}
+
+.successDescription {
+    font-weight: bold;
+    font-size: 2vh;
+    color: #514F5B;
+}
+
+.button-success{
+    display: grid;
+    grid-template-columns: 60% 20% 20%;
+}
+
+.back-home{
+    margin-right: 4%;
+}
+
+.download-pdf{
+    border-radius: 10px;
+    border: 0;
+}

@@ -1,0 +1,54 @@
+.header {
+  margin: 0;
+  padding: 0;
+  box-shadow: 0px 6px 20px rgba(196, 196, 196, 0.67);
+  border-radius: 10px;
+}
+
+.icon-zwallet {
+  padding: 2% 5%;
+  font-family: "Nunito Sans";
+  font-size: 1.7rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 40px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #6379f4;
+}
+
+.name-profile {
+  font-family: "Nunito Sans";
+  font-size: 1.1rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 31px;
+  letter-spacing: 0em;
+  text-align: left;
+  margin: 0;
+}
+
+.phone-profile {
+  font-family: "Nunito Sans";
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
+.bell-icon {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.image-perrson{
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.name{
+  margin-bottom: auto;
+  margin-top: auto;
+}

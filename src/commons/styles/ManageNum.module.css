@@ -1,0 +1,66 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300&display=swap");
+
+.main-manageNum {
+  margin: 0;
+}
+
+.fill-manageNum {
+  /* background-color: greenyellow; */
+  border-radius: 10px;
+  box-shadow: 0px 6px 20px rgba(196, 196, 196, 0.67);
+  margin: 7% 0;
+  padding: 5% 0;
+}
+
+.card-manage {
+  display: grid;
+  grid-template-columns: 80% 20%;
+}
+
+.text-primary {
+  font-family: "Nunito Sans";
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 22px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
+.number-phone {
+  font-family: "Nunito Sans";
+  font-size: 1.1rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 30px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
+.title-manage {
+  font-family: "Nunito Sans";
+  font-size: 1.1rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 25px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
+.word-manage {
+  font-family: 'Nunito Sans';
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 28px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #7A7886;
+}
+
+.image-wrapper{
+  margin-top: auto;
+  margin-bottom: auto;
+  text-align: end;
+  padding-right: 20%;
+}
