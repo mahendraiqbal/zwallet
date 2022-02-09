@@ -3,12 +3,14 @@ import LayoutMain from 'src/commons/components/LayoutMain';
 import Footer from 'src/commons/components/Footer';
 import CardHistory from 'src/commons/components/CardHistory';
 import Header from 'src/commons/components/Header';
+import LayoutTitle from "src/commons/components/LayoutTitle";
 
 
 function History() {
   return (
       <>
-        <main className={`${styles["main-history"]} row col-12 col-md-12`}>
+      <LayoutTitle title="Main | History">
+          <main className={`${styles["main-history"]} row col-12 col-md-12`}>
             <Header />
             <div className="col-md-4">
                 <LayoutMain />
@@ -26,6 +28,8 @@ function History() {
             </div>
             <Footer />
         </main>
+      </LayoutTitle>
+        
       </>
   );
 }

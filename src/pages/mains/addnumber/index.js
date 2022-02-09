@@ -2,12 +2,14 @@ import styles from 'src/commons/styles/addNumber.module.css';
 import LayoutMain from 'src/commons/components/LayoutMain';
 import Footer from 'src/commons/components/Footer';
 import Header from 'src/commons/components/Header';
+import LayoutTitle from "src/commons/components/LayoutTitle";
 
 
 function addNumber() {
   return (
       <>
-        <main className={`${styles["main-addNumber"]} row col-12 col-md-12`}>
+      <LayoutTitle title="Main | Add Number">
+          <main className={`${styles["main-addNumber"]} row col-12 col-md-12`}>
             <Header />
             <div className="col-md-4">
                 <LayoutMain />
@@ -29,6 +31,8 @@ function addNumber() {
             </div>
             <Footer />
         </main>
+      </LayoutTitle>
+        
       </>
   );
 }

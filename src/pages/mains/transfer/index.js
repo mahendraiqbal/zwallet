@@ -4,11 +4,13 @@ import LayoutMain from "src/commons/components/LayoutMain";
 import styles from "src/commons/styles/Transfer.module.css";
 import Header from "src/commons/components/Header";
 import Footer from "src/commons/components/Footer";
+import LayoutTitle from "src/commons/components/LayoutTitle";
 
-export default function Reciver() {
+export default function Transfer() {
   return (
     <>
-      <main className={`${styles["main-addNumber"]} row col-12 col-md-12`}>
+    <LayoutTitle title="Main | Transfer">
+        <main className={`${styles["main-addNumber"]} row col-12 col-md-12`}>
         <Header />
         <div className="col-md-4">
           <LayoutMain />
@@ -55,6 +57,8 @@ export default function Reciver() {
         </div>
         <Footer />
       </main>
+    </LayoutTitle>
+      
     </>
   );
 }

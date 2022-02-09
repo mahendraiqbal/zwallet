@@ -3,6 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Layout from "src/commons/components/LayoutAuth";
 import { register } from "src/modules/utils/https/auth"
 import { useRouter } from 'next/router';
+import LayoutTitle from "src/commons/components/LayoutTitle";
 
 
 function SignUp() {
@@ -27,6 +28,7 @@ function SignUp() {
 
   return (
     <>
+    <LayoutTitle title="Auth | Register">
       <main className={`${styles["main-login"]} row col-12 col-md-12`}>
         <div className={`${styles["aside-auth"]} col-md-7`}>
           <Layout />
@@ -84,6 +86,8 @@ function SignUp() {
           </p>
         </div>
       </main>
+    </LayoutTitle>
+      
     </>
   );
 }
