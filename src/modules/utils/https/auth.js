@@ -9,3 +9,12 @@ export const register = (body) => {
     const urlRegister = process.env.NEXT_PUBLIC_API_URL + '/auth/register'
     return axios.post(urlRegister, body)
 }
+
+export const logout = (token) => {
+    const url =process.env.NEXT_PUBLIC_API_URL + '/logout'
+    return axios.post(url, {
+        headers: {
+            Authorization: `Bearer ${token}`,
+        }
+    })
+}

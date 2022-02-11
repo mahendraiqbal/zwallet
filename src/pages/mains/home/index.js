@@ -3,8 +3,22 @@ import LayoutMain from "src/commons/components/LayoutMain";
 import Footer from "src/commons/components/Footer";
 import Header from "src/commons/components/Header";
 import LayoutTitle from "src/commons/components/LayoutTitle";
+import { getHistory } from "src/modules/utils/https/transactions";
+import { connect } from "react-redux";
+import { useEffect, useState } from "react";
 
-function Home() {
+function Home(props) {
+  // console.log("cek", props);
+  const [history, setHistory] = useState();
+
+  useEffect(() => {
+    const query = "?page=1&limit=6&filter=WEEK";
+    const token = props.token
+    getHistory(query, token)
+      .then((res) => console.log(res.data.data))
+      .catch((err) => console.error(err));
+  }),[];
+
   return (
     <>
       <LayoutTitle title="Main | Home">
@@ -38,6 +52,14 @@ function Home() {
                   </div>
                 </div>
               </section>
+              <section className={`${styles["info-dashboard"]} row col-12`}>
+                <div className={`${styles["chart-dashborad"]} col-md-6`}>
+                  charts
+                </div>
+                <div className={`${styles["transactions-history"]} col-md-6`}>
+                  transactions
+                </div>
+              </section>
             </div>
           </div>
           <Footer />
@@ -47,4 +69,12 @@ function Home() {
   );
 }
 
-export default Home;
+const mapStateToProps = (state) => {
+  console.log(state);
+  return {
+    token: state.auth.userData.token,
+    id: state.auth.userData.id,
+  };
+};
+
+export default connect(mapStateToProps)(Home);

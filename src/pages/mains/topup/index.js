@@ -1,7 +1,15 @@
-import React from 'react';
+// import Modal from "react-modal";
+// import { useState } from 'react';
 
-function TopUp() {
-  return <div>Top Up</div>;
-}
+// function TopUp() {
+//   // const [modalIsOpen, setModalIsOpen] = useState(false);
+//   return (
+//     <>
+//       {/* <Modal isOpen={modal}>
+//         <p>Cek</p>
+//       </Modal> */}
+//     </>
+//   );
+// }
 
-export default TopUp;
+// export default TopUp;
