@@ -38,3 +38,12 @@
     margin-top: 20px;
 }
 
+.see-all{
+    font-weight: 400;
+    font-size: 0.8rem;
+    color: #6379F4;
+    text-align: center;
+    margin-top: auto;
+    margin-bottom: auto;
+    text-decoration: none;
+}

@@ -9,7 +9,7 @@ import rootReducer from './reducers';
 const persistConfig = {
     key: "root",
     storage: storage,
-    whitelist: ["auth"],
+    whitelist: ["auth", "transfer"],
 };
 const pReducer = persistReducer(persistConfig, rootReducer);
 const enhancers = applyMiddleware(rpm, logger);

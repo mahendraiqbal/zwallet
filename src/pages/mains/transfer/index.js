@@ -5,18 +5,44 @@ import Header from "src/commons/components/Header";
 import Footer from "src/commons/components/Footer";
 import LayoutTitle from "src/commons/components/LayoutTitle";
 import { getUser } from "src/modules/utils/https/user";
-import { useState } from "react";
-import { connect } from "react-redux";
+import { useState, useEffect } from "react";
+import { connect, useSelector } from "react-redux";
+import { useRouter } from "next/router";
+import CardDataUser from "src/commons/components/CardDataUser";
 
 function Transfer(props) {
-  const [dataUser, setDataUser] = useState();
-  console.log("cek", props);
-  const allUser = (page, search) => {
-    const filter = `?page=${page}&limit=5&search=${search}&sort=firstname ASC`;
-    getUser(filter, token)
-      .then((res) => console.log(res))
-      .catch();
+  const state = useSelector((state) => state);
+  // console.log(state)
+  const [searchUser, setSearchUser] = useState();
+  const router = useRouter();
+
+  const [userList, setUserList] = useState([]);
+  useEffect(() => {
+    const token = props.token;
+    const query = "?page=1&limit=4&search=&sort=firstName DESC";
+    // console.log(query)
+    
+    getUser(token, query)
+      .then((res) => {
+        // console.log(res.data.data)
+        // console.log(query)
+        setUserList(res.data.data);
+      })
+      .catch((err) => console.error(err));
+  }, []);
+
+  const onClickHandler = (id) => {
+    router.push(`/mains/transfer/${id}`);
+    // console.log(`/mains/transfer/${id}`);
+    // console.log(transferId)
   };
+  
+  const handleSearch = (e) => {
+    const newSearch = {
+      ...searchUser,
+      search: e.target.value
+    }
+  }
 
   return (
     <>
@@ -28,44 +54,40 @@ function Transfer(props) {
           </div>
           <div className={`${styles["fill-Number"]} col-md-8`}>
             <div className={`${styles["fill-addNumber"]} row col-md-11`}>
-              <div>
-                <p>Search Reciver</p>
-                <div>
-                  <form className={styles.search}>
+              <p>
+                <strong>Search Receiver</strong>
+              </p>
+              <div className={styles.search}>
+                <form>
+                  <div className="form-group">
                     <div
-                      className={`${styles["form-input-warpper"]} form-group`}
+                      className={`${styles["style-input"]} d-flex justify-content-center`}
                     >
-                      <div
-                        className={`${styles["style-input"]} d-flex justify-content-center`}
-                      >
-                        <i className="bi bi-search"></i>
-                        <input
-                          type="text"
-                          className="form-control"
-                          id="formGroupExampleInput2"
-                          placeholder="Serach reciver here"
-                        />
-                      </div>
-                    </div>
-                  </form>
-                  <div className="col-8 col-md-8 d-flex">
-                    <div className="mx-2 ">
-                      <Image
-                        src={"/image-profile.png"}
-                        alt="google"
-                        width={50}
-                        height={50}
+                      <i className="bi bi-search"></i>
+                      <input
+                        type="text"
+                        className="form-control"
+                        id="formGroupExampleInput2"
+                        placeholder="Serach receiver here"
                       />
                     </div>
-                    <div className="w-50 text-left my-auto">
-                      <p className={styles.userName}>SUmail</p>
-                      <p className={styles["transaction-description"]}>
-                        +62 8123-1231-321
-                      </p>
-                    </div>
                   </div>
-                </div>
+                </form>
               </div>
+              <section className="w-100">
+                {Array.isArray(userList) &&
+                  userList.length > 0 &&
+                  userList.map((List, idx) => (
+                    <CardDataUser
+                      name={List.firstName}
+                      lastname={List.lastName}
+                      phone={List.noTelp}
+                      id={List.id}
+                      key={idx}
+                      onClickHandler={() => onClickHandler()}
+                    />
+                  ))}
+              </section>
             </div>
           </div>
           <Footer />

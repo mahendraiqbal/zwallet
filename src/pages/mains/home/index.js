@@ -1,24 +1,26 @@
 import styles from "src/commons/styles/Dash.module.css";
 import LayoutMain from "src/commons/components/LayoutMain";
+import CardHistory from "src/commons/components/CardHistory";
 import Footer from "src/commons/components/Footer";
 import Header from "src/commons/components/Header";
 import LayoutTitle from "src/commons/components/LayoutTitle";
 import { getHistory } from "src/modules/utils/https/transactions";
-import { connect } from "react-redux";
+import { connect, useSelector, useDispatch } from "react-redux";
 import { useEffect, useState } from "react";
+import Link from "next/link";
+import { getUser, getUserById } from "src/modules/utils/https/user";
+// import Balance from "src/commons/components/Balance";
 
 function Home(props) {
   // console.log("cek", props);
-  const [history, setHistory] = useState();
-
+  const [userData, setUserData] = useState();
   useEffect(() => {
-    const query = "?page=1&limit=6&filter=WEEK";
-    const token = props.token
-    getHistory(query, token)
+    const id = props.id;
+    const token = props.token;
+    getUserById(token, id)
       .then((res) => console.log(res.data.data))
       .catch((err) => console.error(err));
-  }),[];
-
+  }, []);
   return (
     <>
       <LayoutTitle title="Main | Home">
@@ -57,7 +59,15 @@ function Home(props) {
                   charts
                 </div>
                 <div className={`${styles["transactions-history"]} col-md-6`}>
-                  transactions
+                  <div className="d-flex justify-content-between">
+                    <p>Transaction History</p>
+                    <Link href="/mains/history" passHref>
+                      <a>
+                        <p className={styles["see-all"]}>see all</p>
+                      </a>
+                    </Link>
+                  </div>
+                  <CardHistory />
                 </div>
               </section>
             </div>
@@ -70,11 +80,20 @@ function Home(props) {
 }
 
 const mapStateToProps = (state) => {
-  console.log(state);
+  // console.log(state);
   return {
     token: state.auth.userData.token,
     id: state.auth.userData.id,
+    userData: state.user.userData,
   };
 };
 
-export default connect(mapStateToProps)(Home);
+const mapDispatchToProps = (dispatch) => {
+  return {
+    getProfile: (token, id) => {
+      dispatch(getProfile(token, id));
+    },
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Home);
