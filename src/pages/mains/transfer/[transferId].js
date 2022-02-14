@@ -17,24 +17,23 @@ function TransferId(props) {
   // console.log(Router)
   // const dispatch = useDispatch();
   const id = router.query.transferId;
-  // console.log(id)
-  // console.log(props)
+  // console.log(id);
+  console.log(props)
 
   useEffect(() => {
+    // console.log(router)
     const token = props.token;
     // console.log(token)
-    const id = router.query.transferId;
+    // const id = router.query.transferId;
     if (Object.keys(router.query).includes("transferId")) {
       getUserById(token, id)
         .then((res) => {
-          setUserList(
-            res.data.data
-          );
-          // console.log(res)
+          setUserList(res.data.data);
+          // console.log(res);
         })
         .catch((err) => console.log(err));
     }
-  },[]);
+  }, [router.query]);
 
   return (
     <>
@@ -48,15 +47,17 @@ function TransferId(props) {
             <div className={`${styles["fill-addNumber"]} row col-md-11`}>
               <p>Transfer Money</p>
               <div className="col-10 col-sm-10 col-md-10 col-lg-12 my-4 d-flex">
-                <CardUserById
-                firstname={userList.firstName}
-                lastname={userList.lastName}
-                phone={userList.noTelp}
-                balance={userList.balance}
-                key={id}
-                />
+                {Object.keys(userList).length >= 3 && (
+                  <CardUserById
+                    firstname={userList.firstName}
+                    lastname={userList.lastName}
+                    phone={userList.noTelp}
+                    balance={userList.balance}
+                    id={userList.id}
+                  />
+                )}
               </div>
-              <p>
+              {/* <p>
                 Type the amount you want to transfer and then <br />
                 press continue to the next steps.
               </p>
@@ -67,7 +68,7 @@ function TransferId(props) {
                 <button className={`${styles["button-continue"]} btn-primary`}>
                   Continue
                 </button>
-              </form>
+              </form> */}
             </div>
           </div>
           <Footer />
@@ -82,7 +83,7 @@ const mapStateToProps = (state) => {
   return {
     token: state.auth.userData.token,
     id: state.auth.userData.id,
-    userData: state.user.userData,
+    user: state.user.data,
   };
 };
 

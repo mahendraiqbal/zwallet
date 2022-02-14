@@ -19,7 +19,7 @@ export const topUp = (body, token) => {
 };
 
 export const transfer = (body, token) => {
-    const url = process.env.NEXT_PUBLIC_API_URL + "/transfer";
+    const url = process.env.NEXT_PUBLIC_API_URL + "/transaction/transfer";
     return axios.post(url, body, {
         headers: {
             Authorization: `Bearer ${token}`

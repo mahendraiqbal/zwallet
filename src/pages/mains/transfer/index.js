@@ -11,8 +11,8 @@ import { useRouter } from "next/router";
 import CardDataUser from "src/commons/components/CardDataUser";
 
 function Transfer(props) {
-  const state = useSelector((state) => state);
-  // console.log(state)
+  const state = useSelector((state) => state.auth);
+  console.log(props)
   const [searchUser, setSearchUser] = useState();
   const router = useRouter();
 
@@ -101,6 +101,8 @@ const mapStateToProps = (state) => {
   return {
     token: state.auth.userData.token,
     id: state.auth.userData.id,
+    transfer: state.transfer.data,
+    user: state.user.data,
   };
 };
 

@@ -1,9 +1,10 @@
 import { ACTION_STRING } from 'src/redux/actions/actionString';
-import { getUserById } from 'src/modules/utils/https/user';
+// import { getUserById } from 'src/modules/utils/https/user';
 
-export const getProfile = (token, id) => {
+export const userProfile = (data) => {
+    // console.log(userProfile)
     return {
         type: ACTION_STRING.dataProfile,
-        payload: getProfile(token, id),
+        payload: { data },
     };
 };

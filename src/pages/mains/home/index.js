@@ -9,18 +9,39 @@ import { connect, useSelector, useDispatch } from "react-redux";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { getUser, getUserById } from "src/modules/utils/https/user";
+import { userProfile } from "src/redux/actions/user";
 // import Balance from "src/commons/components/Balance";
 
 function Home(props) {
+  const dispatch = useDispatch();
+  // const state = useSelector((state) => state);
+  const token = props.token;
+  const id = props.id;
+  
+  // const balance = state.user.data.balance;
+  // const phone = state.user.data.noTelp;
+  // console.log(balance, phone)
+  // console.log(id)
+  
+  console.log(props)
+  // console.log(state)
   // console.log("cek", props);
-  const [userData, setUserData] = useState();
+  const [userData, setUserData] = useState({});
   useEffect(() => {
-    const id = props.id;
-    const token = props.token;
+    // const id = props.id;
+    // const token = props.token;
     getUserById(token, id)
-      .then((res) => console.log(res.data.data))
+      .then((res) => {
+        setUserData({...res.data.data});
+        const data = {
+          ...res.data.data
+        };
+        // console.log(res)
+        props.userDispatch(data)
+        // dispatch(userProfile(data))
+      })
       .catch((err) => console.error(err));
-  }, []);
+  },[]);
   return (
     <>
       <LayoutTitle title="Main | Home">
@@ -34,9 +55,9 @@ function Home(props) {
               <section className={styles.ballanceInfo}>
                 <div className="row w-100">
                   <div className="col-11 col-sm-6 mx-auto">
-                    <p>Ballance</p>
-                    <h1>Rp.120.000</h1>
-                    <p>+62 813-9387-7946</p>
+                    <p className={styles.balance}>Ballance</p>
+                    <h1 className={styles["balance-rupiah"]}>Rp.</h1>
+                    <p className={styles["contact-person"]}></p>
                   </div>
                   <div className="col-11 col-sm-4 my-auto float-right">
                     <button className="btn btn-block">
@@ -80,18 +101,19 @@ function Home(props) {
 }
 
 const mapStateToProps = (state) => {
-  // console.log(state);
+  console.log(state)
   return {
     token: state.auth.userData.token,
     id: state.auth.userData.id,
-    userData: state.user.userData,
+    user: state.user.data,
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    getProfile: (token, id) => {
-      dispatch(getProfile(token, id));
+    userDispatch: (data) => {
+      console.log(data)
+      dispatch(userProfile(data));
     },
   };
 };
