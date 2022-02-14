@@ -3,8 +3,11 @@ import LayoutMain from "src/commons/components/LayoutMain";
 import Footer from "src/commons/components/Footer";
 import Header from "src/commons/components/Header";
 import Image from "next/image";
+import { connect } from "react-redux"
 
-function Status() {
+function Status(props) {
+  // console.log(props)
+  // console.log(props.transfer.lastname)
   return (
     <>
       <main className={`${styles["main-addNumber"]} row col-12 col-md-12`}>
@@ -22,14 +25,14 @@ function Status() {
                 <p className={styles.successTitles}>Amount</p>
                 <p className={styles.successDescription}>Rp100.000</p>
                 <p className={styles.successTitles}>Balance Left</p>
-                <p className={styles.successDescription}>Rp20.000</p>
+                <p className={styles.successDescription}>Rp{props.transfer.amount}</p>
                 <p className={styles.successTitles}>Date {"&"} time</p>
                 <p className={styles.successDescription}>
                   May 11, 2020 - 12.20
                 </p>
                 <p className={styles.successTitles}>Notes</p>
                 <p className={styles.successDescription}>
-                  For buying some socks
+                  {props.transfer.notes}
                 </p>
               </div>
               <p className={styles.userName}>Transfer to</p>
@@ -44,9 +47,10 @@ function Status() {
                     />
                   </div>
                   <div className="w-50 text-left my-auto">
-                    <p className={styles.userName}>Samuel Suhi</p>
+                    <p className={styles.userName}>{props.transfer.firstname}
+                  {props.transfer.lastname}</p>
                     <p className={styles["transaction-description"]}>
-                      +62 812-8492-9994
+                      {props.transfer.phone !== null ? props.transfer.phone : "-"}
                     </p>
                   </div>
                 </div>
@@ -67,4 +71,14 @@ function Status() {
   );
 }
 
-export default Status;
+const mapStateToProps = (state) => {
+  return {
+    token: state.auth.userData.token,
+    id: state.auth.userData.id,
+    pin: state.auth.userData.pin,
+    transfer: state.transfer.data,
+    user: state.user.data,
+  };
+};
+
+export default connect(mapStateToProps)(Status);

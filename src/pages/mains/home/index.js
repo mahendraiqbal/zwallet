@@ -17,15 +17,12 @@ function Home(props) {
   // const state = useSelector((state) => state);
   const token = props.token;
   const id = props.id;
-  
-  // const balance = state.user.data.balance;
-  // const phone = state.user.data.noTelp;
-  // console.log(balance, phone)
+
+
   // console.log(id)
   
   console.log(props)
   // console.log(state)
-  // console.log("cek", props);
   const [userData, setUserData] = useState({});
   useEffect(() => {
     // const id = props.id;
@@ -48,7 +45,7 @@ function Home(props) {
       <LayoutTitle title="Main | Home">
         <main className={`${styles["main-history"]} row col-12 col-md-12`}>
           <Header />
-          <div className="col-md-4">
+          <div className={`${styles["layout-main"]} col-md-4`}>
             <LayoutMain />
           </div>
           <div className={`${styles["fill-transaction"]} col-md-8`}>

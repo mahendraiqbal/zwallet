@@ -30,7 +30,7 @@ function CardUserById(props, dispatch) {
       <form onSubmit={submitHandler}>
         <div
           className="col-10 col-sm-10 col-md-10 col-lg-12 my-4 d-flex"
-          key={props.id, props.firstname, props.lastame, props.phone}
+          key={props.id, props.firstname, props.lastname, props.phone}
         >
           {/* <p>{id}</p> */}
           <div className="mx-2">
