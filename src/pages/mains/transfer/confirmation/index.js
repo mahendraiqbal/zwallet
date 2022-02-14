@@ -11,46 +11,47 @@ import { useEffect } from "react";
 import { detailTransfer } from "src/redux/actions/transfer";
 
 function Confirmation(props, dispatch) {
-  // console.log(props)
-  // const router = useRouter();
-  // const balanceTransfer = (e) => {
-  //   e.preventDefault();
-  //   const body = {
-  //     id: props.transfer.id,
-  //     amount: props.transfer.amount,
-  //     notes: props.transfer.notes,
-  //     firstname: props.firstName,
-  //     lastname: props.lastName,
-  //     phone: props.phone,
-  //   };
-  //   const token = props.token;
-  // console.log(token)
-  // transfer(body, token)
-  // .then((res) => console.log(res))
-  // .catch((err) => console.log(err))
-  // useEffect(() => {
-
-  // })
+  console.log(props)
   const router = useRouter();
+  const token = props.token;
+  const id = props.transfer.id;
+  console.log("Test id", id)
 
   const balanceTransfer = (e) => {
     e.preventDefault();
-    const data = {
-      id: props.transfer.id,
+    const body = {
+      receiverId: props.transfer.id,
       amount: props.transfer.amount,
       notes: props.transfer.notes,
-      firstname: props.firstName,
-      lastname: props.lastName,
-      phone: props.phone,
+      // firstname: props.firstName,
+      // lastname: props.lastName,
+      // phone: props.phone,
     };
-    props.dispatch(detailTransfer(data));
+    transfer(body, token)
+    .then((res) => {
+      console.log(res)
+    })
+    .catch((err) => console.log(err))
   };
-  useEffect(() => {
-      setTimeout(() => {
-        router.push("/mains/transfer/status");
-      }, 10000);
+
+  // useEffect(() => {
+  //     setTimeout(() => {
+  //       router.push("/mains/transfer/status");
+  //     }, 10000);
       // console.log(props);
-  });
+  // });
+  // console.log(data)
+  // useEffect(() => {
+  //   const token = props.token;
+  //   transfer(token, body)
+  //     .then((res) => {
+  //       console.log(res.data.data)
+  //       // console.log(query)
+  //       setUserList(res.data.data);
+  //     })
+  //     .catch((err) => console.error(err));
+  // // eslint-disable-next-line react-hooks/exhaustive-deps
+  // }, []);
   return (
     <>
       <LayoutTitle title="Main | Confirmation">

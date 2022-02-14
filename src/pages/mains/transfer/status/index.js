@@ -6,7 +6,7 @@ import Image from "next/image";
 import { connect } from "react-redux"
 
 function Status(props) {
-  // console.log(props)
+  console.log(props)
   // console.log(props.transfer.lastname)
   return (
     <>

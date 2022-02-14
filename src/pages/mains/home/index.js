@@ -10,6 +10,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { getUser, getUserById } from "src/modules/utils/https/user";
 import { userProfile } from "src/redux/actions/user";
+import { Router } from "next/router";
 // import Balance from "src/commons/components/Balance";
 
 function Home(props) {
@@ -18,10 +19,9 @@ function Home(props) {
   const token = props.token;
   const id = props.id;
 
-
   // console.log(id)
-  
-  console.log(props)
+
+  console.log(props);
   // console.log(state)
   const [userData, setUserData] = useState({});
   useEffect(() => {
@@ -29,17 +29,22 @@ function Home(props) {
     // const token = props.token;
     getUserById(token, id)
       .then((res) => {
-        setUserData({...res.data.data});
+        setUserData({ ...res.data.data });
         const data = {
-          ...res.data.data
+          ...res.data.data,
         };
         // console.log(res)
-        props.userDispatch(data)
+        props.userDispatch(data);
         // dispatch(userProfile(data))
       })
       .catch((err) => console.error(err));
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  },[]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  const handlerClick = (e) => {
+    e.preventDefault();
+    router.push(href);
+  }
   return (
     <>
       <LayoutTitle title="Main | Home">
@@ -58,12 +63,14 @@ function Home(props) {
                     <p className={styles["contact-person"]}></p>
                   </div>
                   <div className="col-11 col-sm-4 my-auto float-right">
-                    <button className="btn btn-block">
-                      <span>
-                        <i className="bi bi-arrow-up"></i>
-                      </span>
-                      Transfer
-                    </button>
+                    <Link href="/mains/transfer" onClick={handlerClick} passHref>
+                      <button className="btn btn-block">
+                        <span>
+                          <i className="bi bi-arrow-up"></i>
+                        </span>
+                        Transfer
+                      </button>
+                    </Link>
                     <button className="btn btn-block">
                       <span>
                         <i className="bi bi-plus-lg"></i>
@@ -99,7 +106,7 @@ function Home(props) {
 }
 
 const mapStateToProps = (state) => {
-  console.log(state)
+  console.log(state);
   return {
     token: state.auth.userData.token,
     id: state.auth.userData.id,
@@ -110,7 +117,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     userDispatch: (data) => {
-      console.log(data)
+      console.log(data);
       dispatch(userProfile(data));
     },
   };

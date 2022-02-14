@@ -6,3 +6,10 @@ export const detailTransfer = (data) => {
         payload: {data},
     }
 }
+
+// export const loginAction = (body) => {
+//     return {
+//         type: ACTION_STRING.loginAuth,
+//         payload: login(body)
+//     };
+// };

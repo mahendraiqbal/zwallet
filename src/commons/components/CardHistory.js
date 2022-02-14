@@ -9,7 +9,7 @@ function CardHistory(props) {
   const [history, setHistory] = useState();
   
   useEffect(() => {
-    const query = "?page=1&limit=6&filter=WEEK";
+    const query = "?page=1&limit=3&filter=WEEK";
     const token = props.token;
     getHistory(query, token)
       .then((res) => setHistory(res.data.data))
