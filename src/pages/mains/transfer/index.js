@@ -29,6 +29,7 @@ function Transfer(props) {
         setUserList(res.data.data);
       })
       .catch((err) => console.error(err));
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const onClickHandler = (id) => {

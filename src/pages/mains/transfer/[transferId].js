@@ -33,7 +33,8 @@ function TransferId(props) {
         })
         .catch((err) => console.log(err));
     }
-  }, [router.query]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <>

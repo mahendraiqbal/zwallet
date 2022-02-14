@@ -41,6 +41,7 @@ function Home(props) {
         // dispatch(userProfile(data))
       })
       .catch((err) => console.error(err));
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   },[]);
   return (
     <>
