@@ -1,0 +1,22 @@
+.inputTopup {
+    text-align: center;
+    width: 100%;
+    height: 50px;
+}
+
+.input-topup{
+    height: 40px;
+    width: 80%;
+    border-radius: 10px;
+}
+
+.button-submit {
+    margin: 4% 0;
+    text-align: center;
+    width: 50%;
+}
+
+.submitted{
+    text-align: end;
+    padding-right: 10%;
+}

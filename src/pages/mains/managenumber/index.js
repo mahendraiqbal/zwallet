@@ -4,8 +4,9 @@ import Footer from "src/commons/components/Footer";
 import Header from "src/commons/components/Header";
 import Image from "next/image";
 import LayoutTitle from "src/commons/components/LayoutTitle";
+import { connect } from "react-redux";
 
-function ManageNum() {
+function ManageNum(props) {
   return (
     <>
       <LayoutTitle title="Main | Manage Number">
@@ -24,7 +25,7 @@ function ManageNum() {
               <div className={styles["card-manage"]}>
                 <div>
                   <p className={styles["text-primary"]}>Primary</p>
-                  <p className={styles["number-phone"]}>+62 813 9387 7946</p>
+                  <p className={styles["number-phone"]}>{props.user.noTelp}</p>
                 </div>
                 <div className={styles["image-wrapper"]}>
                   <Image
@@ -44,4 +45,13 @@ function ManageNum() {
   );
 }
 
-export default ManageNum;
+const mapStateToProps = (state) => {
+  console.log(state);
+  return {
+    token: state.auth.userData.token,
+    id: state.auth.userData.id,
+    user: state.user.data,
+  };
+};
+
+export default connect(mapStateToProps)(ManageNum);

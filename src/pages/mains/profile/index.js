@@ -7,8 +7,47 @@ import Header from "src/commons/components/Header";
 import Image from "next/image";
 import Link from "next/link";
 import LayoutTitle from "src/commons/components/LayoutTitle";
+import { connect } from "react-redux";
+import Swal from "sweetalert2";
+import { useRouter } from "next/router";
+import { useDispatch } from "react-redux";
+import { logoutAction } from "src/redux/actions/auth"
+import { logout } from "src/modules/utils/https/auth"
 
-function Profile() {
+
+function Profile(props) {
+  const router = useRouter();
+  const dispatch = useDispatch();
+  const token = props.token;
+  // console.log(token)
+
+  const logoutHandler = () => {
+    Swal.fire({
+      icon: "warning",
+      title: "Do you want to logout?",
+      showCancelButton: true,
+      confirmButtonText: "Logout",
+      cancelButtonText: `Cancel`,
+    }).then((res) => {
+      if (res.isConfirmed) {
+        logout(token)
+        .then((res) => console.log(res))
+        .catch((err) => console.log(err));
+
+        dispatch(logoutAction());
+        Swal.fire({
+          title: "Logout Success",
+          text: "Success Logout",
+          icon: "success"
+        });
+        setTimeout(() => {
+          window.location.reload(false);
+        }, 4000);
+        router.push("/")
+      }
+    })
+  }
+
   return (
     <>
       <LayoutTitle title="Main | Profile">
@@ -30,8 +69,8 @@ function Profile() {
               <div className={styles["button-editInfo"]}>
                 <button className={styles["button-edit"]}>edit</button>
               </div>
-              <p className={styles["name-profile"]}>Robert Chandler</p>
-              <p className={styles["number-profile"]}>+62 813-9387-7946</p>
+              <p className={styles["name-profile"]}>{props.user.firstName} {props.user.lastName}</p>
+              <p className={styles["number-profile"]}>{props.user.noTelp}</p>
               <div className={styles["button-personal"]}>
                 <Link href="/mains/personalinfo">
                   <button className={styles["personal-info"]}>
@@ -50,7 +89,7 @@ function Profile() {
                 <button className={styles["change-pin"]}>Change PIN</button>
               </div>
               <div className={styles["button-logout"]}>
-                <button className={styles.logout}>Logout</button>
+                <button className={styles.logout} onClick={logoutHandler}>Logout</button>
               </div>
             </div>
           </div>
@@ -61,4 +100,13 @@ function Profile() {
   );
 }
 
-export default Profile;
+const mapStateToProps = (state) => {
+  console.log(state)
+  return {
+    token: state.auth.userData.token,
+    id: state.auth.userData.id,
+    user: state.user.data,
+  };
+};
+
+export default connect(mapStateToProps)(Profile);

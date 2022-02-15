@@ -1,7 +1,9 @@
 import styles from "src/commons/styles/Header.module.css";
 import Image from "next/image";
+import { connect } from "react-redux";
 
-function Header() {
+function Header(props) {
+  console.log(props)
   return (
     <>
       <div className={`${styles["header"]} row col-12 col-md-12`}>
@@ -17,8 +19,8 @@ function Header() {
               />
             </div>
             <div className={`${styles["name"]} col-md-6`}>
-              <p className={styles["name-profile"]}>Robert Chandler</p>
-              <p className={styles["phone-profile"]}>+62 8139 3877 7946</p>
+              <p className={styles["name-profile"]}></p>
+              <p className={styles["phone-profile"]}></p>
             </div>
             <div className={`${styles["bell-icon"]} col-md-3`}>
               <Image 
@@ -35,4 +37,14 @@ function Header() {
   );
 }
 
-export default Header;
+const mapStateToProps = (state) => {
+  console.log(state);
+  return {
+    token: state.auth.userData.token,
+    id: state.auth.userData.id,
+    user: state.user.data,
+  };
+};
+
+
+export default connect(mapStateToProps)(Header);

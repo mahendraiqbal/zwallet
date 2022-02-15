@@ -11,7 +11,7 @@ export const register = (body) => {
 }
 
 export const logout = (token) => {
-    const url =process.env.NEXT_PUBLIC_API_URL + '/logout'
+    const url =process.env.NEXT_PUBLIC_API_URL + '/auth/logout'
     return axios.post(url, {
         headers: {
             Authorization: `Bearer ${token}`,

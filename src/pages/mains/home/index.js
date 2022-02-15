@@ -11,17 +11,18 @@ import Link from "next/link";
 import { getUser, getUserById } from "src/modules/utils/https/user";
 import { userProfile } from "src/redux/actions/user";
 import { Router } from "next/router";
-// import Balance from "src/commons/components/Balance";
+import TopUp from "src/commons/components/TopUp";
 
 function Home(props) {
   const dispatch = useDispatch();
   // const state = useSelector((state) => state);
   const token = props.token;
   const id = props.id;
+  const [show, setShow] = useState(false)
 
   // console.log(id)
 
-  console.log(props);
+  // console.log(props);
   // console.log(state)
   const [userData, setUserData] = useState({});
   useEffect(() => {
@@ -45,6 +46,10 @@ function Home(props) {
     e.preventDefault();
     router.push(href);
   }
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
   return (
     <>
       <LayoutTitle title="Main | Home">
@@ -71,7 +76,7 @@ function Home(props) {
                         Transfer
                       </button>
                     </Link>
-                    <button className="btn btn-block">
+                    <button className="btn btn-block" onClick={handleShow}>
                       <span>
                         <i className="bi bi-plus-lg"></i>
                       </span>
@@ -97,6 +102,7 @@ function Home(props) {
                 </div>
               </section>
             </div>
+            <TopUp show={show} handleClose={handleClose}/>
           </div>
           <Footer />
         </main>

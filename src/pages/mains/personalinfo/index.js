@@ -3,8 +3,17 @@ import LayoutMain from "src/commons/components/LayoutMain";
 import Footer from "src/commons/components/Footer";
 import Header from "src/commons/components/Header";
 import LayoutTitle from "src/commons/components/LayoutTitle";
+import { connect } from "react-redux";
+import Link from "next/link";
 
-function PersonalInfo() {
+
+function PersonalInfo(props) {
+  // console.log(props);
+
+  const handlerClick = (e) => {
+    e.preventDefault();
+    router.push(href);
+  }
   return (
     <>
       <LayoutTitle title="Main | Personal Information">
@@ -24,39 +33,30 @@ function PersonalInfo() {
               <form>
                 <div className={styles["first-name"]}>
                   <p className={styles["label-fname"]}>First Name</p>
-                  <input
-                    type="text"
-                    disabled
-                    value="Robert"
-                    className={styles["input-fname"]}
-                  ></input>
+                  <p className={styles["input-fname"]}>
+                    {props.user.firstName}
+                  </p>
                 </div>
                 <div className={styles["last-name"]}>
                   <p className={styles["label-lname"]}>Last Name</p>
-                  <input
-                    type="text"
-                    disabled
-                    value="Chandler"
-                    className={styles["input-lname"]}
-                  ></input>
+                  <p className={styles["input-lname"]}>{props.user.lastName}</p>
                 </div>
                 <div className={styles["verif-email"]}>
                   <p className={styles["label-email"]}>Verified Email</p>
-                  <input
-                    type="text"
-                    disabled
-                    value="pewdiepie1@gmail.com"
-                    className={styles["input-email"]}
-                  ></input>
+                  <p className={styles["input-email"]}>{props.user.email}</p>
                 </div>
-                <div className={styles["phone-number"]}>
+                <div className={`${styles["phone-number"]}`}>
                   <p className={styles["label-phone"]}>Phone Number</p>
-                  <input
-                    type="text"
-                    disabled
-                    value="+62 813-9387-7946"
-                    className={styles["input-phone"]}
-                  ></input>
+                  <div className={`${styles["number-phone"]} row col-md-12`}>
+                    <p className={`${styles["input-phone"]} col-md-10`}>
+                      {props.user.noTelp}
+                    </p>
+                    <Link href="/mains/managenumber" onClick={handlerClick} passHref>
+                      <p className={`${styles["manage-number"]} col-md-2`}>
+                        manage
+                      </p>
+                    </Link>
+                  </div>
                 </div>
               </form>
             </div>
@@ -68,4 +68,13 @@ function PersonalInfo() {
   );
 }
 
-export default PersonalInfo;
+const mapStateToProps = (state) => {
+  console.log(state);
+  return {
+    token: state.auth.userData.token,
+    id: state.auth.userData.id,
+    user: state.user.data,
+  };
+};
+
+export default connect(mapStateToProps)(PersonalInfo);

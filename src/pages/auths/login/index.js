@@ -6,7 +6,9 @@ import LayoutTitle from "src/commons/components/LayoutTitle";
 import { connect } from "react-redux";
 import { loginAction } from "src/redux/actions/auth";
 import { useState, useEffect } from "react";
+import { ToastContainer, toast } from "react-toastify";
 import { useRouter } from "next/router";
+import "react-toastify/dist/ReactToastify.css";
 
 function Login(props) {
   const router = useRouter();
@@ -17,19 +19,18 @@ function Login(props) {
       email: e.target.email.value,
       password: e.target.password.value,
     };
-    props.loginDispatch(body)
-  }
+    props.loginDispatch(body);
+  };
   useEffect(() => {
-    
     if (props.auth.isFulfilled) {
-        setTimeout(() => {
-          router.push("/mains/home");
-        }, 1000);
-        console.log(props)
+      router.push("/mains/home");
     }
-    
   });
-  
+  const notify = () => {
+    toast.success("Login Success", {
+      position: "top-right",
+    });
+  };
 
   return (
     <>
@@ -65,9 +66,14 @@ function Login(props) {
                   className={styles.password}
                 />
                 <p className={styles.forgot}>Forgot password?</p>
-                <button className={`${styles["button-login"]} btn`} type="submit">
+                <button
+                  className={`${styles["button-login"]} btn`}
+                  type="submit"
+                  onClick={notify}
+                >
                   Login
                 </button>
+                <ToastContainer />
               </div>
             </form>
 
@@ -90,9 +96,9 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     loginDispatch: (body) => {
-      dispatch(loginAction(body))
-    }
-  }
-}
+      dispatch(loginAction(body));
+    },
+  };
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(Login);

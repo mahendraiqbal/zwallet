@@ -7,15 +7,18 @@ import LayoutTitle from "src/commons/components/LayoutTitle";
 import { useRouter } from "next/router";
 import { connect } from "react-redux";
 import { transfer } from "src/modules/utils/https/transactions";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import PinConfirmation from "src/commons/components/PinConfirmation";
 import { detailTransfer } from "src/redux/actions/transfer";
+import { toast } from "react-toastify";
 
 function Confirmation(props, dispatch) {
-  console.log(props)
+  // console.log(props)
   const router = useRouter();
   const token = props.token;
   const id = props.transfer.id;
-  console.log("Test id", id)
+  // console.log("Test id", id)
+  const [show, setShow] = useState(false)
 
   const balanceTransfer = (e) => {
     e.preventDefault();
@@ -29,10 +32,18 @@ function Confirmation(props, dispatch) {
     };
     transfer(body, token)
     .then((res) => {
-      console.log(res)
+      console.log(res);
+      toast.success(res.data.msg, {
+        position: toast.POSITION.TOP_RIGHT,
+        autoClose: 2000,
+      });
+      router.push("/mains/home")
     })
     .catch((err) => console.log(err))
   };
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true)
 
   // useEffect(() => {
   //     setTimeout(() => {
@@ -112,12 +123,14 @@ function Confirmation(props, dispatch) {
                     </div>
                   </div>
                   <button
+                    onClick={handleShow}
                     type="submit"
                     className="btn btn-primary d-flex align-items-end justify-content-end"
                   >
-                    continue
+                    Continue
                   </button>
                 </form>
+                <PinConfirmation show={show} handleClose={handleClose}/>
               </div>
             </div>
           </div>
